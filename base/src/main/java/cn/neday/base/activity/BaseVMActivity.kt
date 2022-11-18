@@ -1,6 +1,7 @@
 package cn.neday.base.activity
 
 import androidx.lifecycle.Observer
+import androidx.viewbinding.ViewBinding
 import cn.neday.base.viewmodel.BaseViewModel
 import com.blankj.utilcode.util.LogUtils
 
@@ -9,7 +10,8 @@ import com.blankj.utilcode.util.LogUtils
  *
  * @author nEdAy
  */
-abstract class BaseVMActivity<ViewModel : BaseViewModel>(layoutId: Int) : BaseActivity(layoutId) {
+abstract class BaseVMActivity<VB : ViewBinding, ViewModel : BaseViewModel> :
+    BaseActivity<VB>() {
 
     protected abstract val mViewModel: ViewModel
 

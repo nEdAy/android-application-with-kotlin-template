@@ -4,13 +4,15 @@ import cn.neday.android.template.BASE_URL
 import cn.neday.android.template.TIME_OUT_SECONDS
 import cn.neday.base.BuildConfig
 import cn.neday.base.network.interceptor.AuthenticationInterceptor
+import com.blankj.utilcode.util.Utils
+import com.chuckerteam.chucker.api.ChuckerCollector
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
-
 
 val httpClientModule = module {
 
@@ -37,7 +39,14 @@ val httpClientModule = module {
                     false -> HttpLoggingInterceptor.Level.NONE
                 }
             })
-            //.addInterceptor(ChuckInterceptor(Utils.getApp()))
+            .addInterceptor(
+                ChuckerInterceptor.Builder(Utils.getApp())
+                    .collector(ChuckerCollector(Utils.getApp()))
+                    .maxContentLength(250000L)
+                    .redactHeaders(emptySet())
+                    .alwaysReadResponseBody(true)
+                    .build()
+            )
             .build()
     }
 }

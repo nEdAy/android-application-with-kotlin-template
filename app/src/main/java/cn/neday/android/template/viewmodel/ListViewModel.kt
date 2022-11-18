@@ -9,11 +9,11 @@ import cn.neday.base.network.then
 import cn.neday.base.viewmodel.BaseViewModel
 
 /**
- * MainViewModel
+ * ListViewModel
  *
  * @author nEdAy
  */
-class MainViewModel(private val repository: SentenceRepository) : BaseViewModel() {
+class ListViewModel(private val repository: SentenceRepository) : BaseViewModel() {
 
     val sentence: MutableLiveData<SentenceResponse?> = MutableLiveData()
 

@@ -1,9 +1,8 @@
 package cn.neday.base.activity
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
 import cn.neday.base.config.MMKVConfig.TOKEN
 import cn.neday.base.config.MMKVConfig.kv
 import com.blankj.utilcode.util.ActivityUtils
@@ -14,7 +13,10 @@ import com.blankj.utilcode.util.StringUtils
  *
  * @author nEdAy
  */
-abstract class BaseActivity(@get:LayoutRes val layoutId: Int?) : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
+    private var _binding: VB? = null
+
+    protected val binding: VB? get() = _binding
 
     open val isCheckLogin = false
 
@@ -24,12 +26,13 @@ abstract class BaseActivity(@get:LayoutRes val layoutId: Int?) : AppCompatActivi
             //TODO: Jump to Login Page
             ActivityUtils.finishActivity(this)
         }
-        layoutId?.let {
-            setContentView(LayoutInflater.from(this).inflate(it, null))
-        }
+        _binding = getViewBinding()
+        setContentView(binding?.root)
         prepareInitView()
         initView(savedInstanceState)
     }
+
+    protected abstract fun getViewBinding(): VB
 
     open fun prepareInitView() {
         // do nothing
@@ -39,4 +42,9 @@ abstract class BaseActivity(@get:LayoutRes val layoutId: Int?) : AppCompatActivi
      * onCreate
      */
     abstract fun initView(savedInstanceState: Bundle?)
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null;
+    }
 }

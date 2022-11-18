@@ -15,7 +15,9 @@ import androidx.viewbinding.ViewBinding
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     private var _binding: VB? = null
 
-    protected val binding: VB? get() = _binding
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    protected val binding: VB get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,

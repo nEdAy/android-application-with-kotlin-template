@@ -3,11 +3,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 33
     }
 
     buildTypes {
@@ -31,24 +31,28 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
 
     // Kotlinx Coroutines
-    def coroutines_version = "1.5.2"
+    def coroutines_version = "1.6.4"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
     // AndroidX UI
-    api 'androidx.core:core-ktx:1.9.0-alpha03'
-    api 'androidx.fragment:fragment-ktx:1.4.1'
-    api 'androidx.appcompat:appcompat:1.4.1'
-    api 'androidx.constraintlayout:constraintlayout:2.1.3'
+    api 'androidx.core:core-ktx:1.9.0'
+    api 'androidx.fragment:fragment-ktx:1.5.4'
+    api 'androidx.appcompat:appcompat:1.5.1'
+    api 'androidx.constraintlayout:constraintlayout:2.1.4'
     api 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
     api 'androidx.recyclerview:recyclerview:1.2.1'
     api 'androidx.cardview:cardview:1.0.0'
     api 'androidx.viewpager2:viewpager2:1.0.0'
 
+    // Navigation
+    api 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    api 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
     // Material UI
-    api 'com.google.android.material:material:1.5.0'
+    api 'com.google.android.material:material:1.7.0'
     api 'com.google.android:flexbox:1.1.0'
 
     // ViewModel & LiveData & Lifecycle
@@ -67,12 +71,12 @@ dependencies {
     api "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
     // OkHttp
-    def okHttp_version = "4.9.2"
+    def okHttp_version = "4.10.0"
     api "com.squareup.okhttp3:okhttp:$okHttp_version"
     api "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
 
     // Gson
-    api 'com.google.code.gson:gson:2.8.9'
+    api 'com.google.code.gson:gson:2.9.0'
 
     // MMKV
     api 'com.tencent:mmkv-static:1.0.22'
@@ -81,7 +85,7 @@ dependencies {
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
 
     // Coil
-    api 'io.coil-kt:coil:2.0.0'
+    api 'io.coil-kt:coil:2.2.2'
 
     // Flyco RoundView
     api 'com.flyco.banner:FlycoBanner_Lib:2.0.2@aar'
@@ -91,24 +95,18 @@ dependencies {
     // Particle Smasher
     api 'com.ifadai:particlesmasher:1.0.1'
 
-    // Title Bar
-    api 'com.wuhenzhizao:titlebar:1.1.4'
-
     // Utils
-    api 'com.blankj:utilcodex:1.30.6'
-
-    // Android Debug Database
-    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+    api 'com.blankj:utilcodex:1.31.0'
 
     // Chuck - http log/debug
-    debugApi 'pl.droidsonroids:chuck:1.1.47'
-    releaseApi 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+    debugApi "com.github.chuckerteam.chucker:library:3.5.2"
+    releaseApi "com.github.chuckerteam.chucker:library-no-op:3.5.2"
 
     // DoKit
     debugImplementation 'io.github.didi.dokit:dokitx:3.5.0'
     releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.5.0'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 }
