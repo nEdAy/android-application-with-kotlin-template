@@ -74,8 +74,8 @@ dependencies {
 
     // OkHttp
     def okHttp_version = "4.10.0"
-    api "com.squareup.okhttp3:okhttp:$okHttp_version"
-    api "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+    implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
 
     // Retrofit
     def retrofit_version = "2.9.0"
@@ -98,12 +98,15 @@ dependencies {
     api 'com.github.DylanCaiCoding.Longan:longan:1.1.1'
 
     // Chuck - http log/debug
-    debugApi "com.github.chuckerteam.chucker:library:3.5.2"
-    releaseApi "com.github.chuckerteam.chucker:library-no-op:3.5.2"
+    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
 
     // DoKit
     debugApi 'io.github.didi.dokit:dokitx:3.5.0'
     releaseApi 'io.github.didi.dokit:dokitx-no-op:3.5.0'
+
+    // Leakcanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
 
     testApi 'junit:junit:4.13.2'
     androidTestApi 'androidx.test.ext:junit:1.1.4'
