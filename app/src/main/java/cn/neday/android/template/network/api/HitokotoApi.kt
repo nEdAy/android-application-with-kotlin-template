@@ -10,15 +10,15 @@ interface HitokotoApi {
     @GET("/")
     suspend fun hitokoto(): HitokotoResponse
 
-    @POST("auth/login")
+    @POST("/auth/login")
     suspend fun token(): BaseSentenceResponse<String>
 
-    @GET("like")
+    @GET("/like")
     suspend fun likeInfo(@Query("sentence_uuid") uuid: String): BaseHitokotoResponse<LikeInfoResponse>
 
-    @POST("like")
+    @POST("/like")
     suspend fun markLike(@Query("sentence_uuid") uuid: String): BaseHitokotoResponse<MarkLikeResponse>
 
-    @POST("like/cancel")
+    @POST("/like/cancel")
     suspend fun cancelLike(@Query("sentence_uuid") uuid: String): BaseHitokotoResponse<Unit>
 }

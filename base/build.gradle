@@ -73,8 +73,8 @@ dependencies {
 
     // OkHttp
     def okHttp_version = "4.10.0"
-    implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+    api "com.squareup.okhttp3:okhttp:$okHttp_version"
+    api "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
 
     // Retrofit
     def retrofit_version = "2.9.0"
@@ -97,8 +97,8 @@ dependencies {
     api 'com.github.DylanCaiCoding.Longan:longan:1.1.1'
 
     // Chuck - http log/debug
-    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
-    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
+    debugApi "com.github.chuckerteam.chucker:library:3.5.2"
+    releaseApi "com.github.chuckerteam.chucker:library-no-op:3.5.2"
 
     // DoKit
     debugApi 'io.github.didi.dokit:dokitx:3.5.0'
