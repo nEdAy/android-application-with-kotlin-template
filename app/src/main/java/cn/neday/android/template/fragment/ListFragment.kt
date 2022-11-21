@@ -1,27 +1,20 @@
 package cn.neday.android.template.fragment
 
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import cn.neday.android.template.adapter.SentenceAdapter
 import cn.neday.android.template.databinding.FragmentMainBinding
 import cn.neday.android.template.databinding.IncludeListBinding
 import cn.neday.android.template.viewmodel.ListViewModel
-import cn.neday.base.fragment.BaseVMFragment
+import cn.neday.base.fragment.BaseBindingVMFragment
 import com.blankj.utilcode.util.ToastUtils
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ListFragment : BaseVMFragment<FragmentMainBinding, ListViewModel>() {
+class ListFragment : BaseBindingVMFragment<FragmentMainBinding, ListViewModel>() {
 
     private val adapter = SentenceAdapter()
     private var keyword = ""
 
     override val viewModel by viewModel<ListViewModel>()
-
-    override fun getViewBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ) = FragmentMainBinding.inflate(inflater, container, false)
 
     override fun initView() {
         initSearchHeader()

@@ -1,22 +1,25 @@
 package cn.neday.base.activity
 
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowInsets
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import cn.neday.base.config.MMKVConfig.TOKEN
 import cn.neday.base.config.MMKVConfig.kv
 import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.StringUtils
+import com.dylanc.viewbinding.base.ActivityBinding
+import com.dylanc.viewbinding.base.ActivityBindingDelegate
 
 /**
- * Activity基类
+ * Activity 基类 + Binding
  *
  * @author nEdAy
  */
-abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
-    private var _binding: VB? = null
-
-    protected val binding: VB? get() = _binding
+abstract class BaseBindingActivity<VB : ViewBinding> : AppCompatActivity(),
+    ActivityBinding<VB> by ActivityBindingDelegate() {
 
     open val isCheckLogin = false
 
@@ -26,13 +29,10 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
             //TODO: Jump to Login Page
             ActivityUtils.finishActivity(this)
         }
-        _binding = getViewBinding()
-        setContentView(binding?.root)
+        setContentViewWithBinding()
         prepareInitView()
         initView(savedInstanceState)
     }
-
-    protected abstract fun getViewBinding(): VB
 
     open fun prepareInitView() {
         // do nothing
@@ -43,8 +43,15 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
      */
     abstract fun initView(savedInstanceState: Bundle?)
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null;
+    @Suppress("DEPRECATION")
+    protected fun setFullScreen() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
     }
 }

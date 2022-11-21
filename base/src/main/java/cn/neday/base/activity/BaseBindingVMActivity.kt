@@ -6,12 +6,12 @@ import cn.neday.base.viewmodel.BaseViewModel
 import com.blankj.utilcode.util.LogUtils
 
 /**
- * Activity基类 + ViewModel
+ * Activity 基类 + Binding + ViewModel
  *
  * @author nEdAy
  */
-abstract class BaseVMActivity<VB : ViewBinding, ViewModel : BaseViewModel> :
-    BaseActivity<VB>() {
+abstract class BaseBindingVMActivity<VB : ViewBinding, ViewModel : BaseViewModel> :
+    BaseBindingActivity<VB>() {
 
     protected abstract val mViewModel: ViewModel
 
