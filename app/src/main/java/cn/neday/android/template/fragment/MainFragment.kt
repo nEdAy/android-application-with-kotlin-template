@@ -26,5 +26,6 @@ class MainFragment : BaseVMFragment<FragmentMainBinding, MainViewModel>() {
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_MainFragment_to_SecondFragment)
         }
+        viewModel.getSentence()
     }
 }
