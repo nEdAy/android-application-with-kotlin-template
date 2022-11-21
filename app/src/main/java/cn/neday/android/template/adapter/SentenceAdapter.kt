@@ -3,8 +3,8 @@ package cn.neday.android.template.adapter
 import androidx.recyclerview.widget.RecyclerView
 import cn.neday.android.template.R
 import cn.neday.android.template.network.response.SentenceResponse
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.didichuxing.doraemonkit.widget.brvah.BaseQuickAdapter
+import com.didichuxing.doraemonkit.widget.brvah.viewholder.BaseViewHolder
 
 /**
  * Adapter for the [RecyclerView]

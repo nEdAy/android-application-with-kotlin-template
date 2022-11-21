@@ -6,7 +6,6 @@ import cn.neday.android.template.databinding.FragmentMainBinding
 import cn.neday.android.template.databinding.IncludeListBinding
 import cn.neday.android.template.viewmodel.ListViewModel
 import cn.neday.base.fragment.BaseBindingVMFragment
-import com.blankj.utilcode.util.ToastUtils
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : BaseBindingVMFragment<FragmentMainBinding, ListViewModel>() {
@@ -48,9 +47,6 @@ class LoginFragment : BaseBindingVMFragment<FragmentMainBinding, ListViewModel>(
     private fun initAdapter(listBinding: IncludeListBinding) {
         listBinding.recyclerView.layoutManager = GridLayoutManager(context, 2)
         listBinding.recyclerView.adapter = adapter
-        viewModel.errMsg.observe(this) {
-            ToastUtils.showShort(it)
-        }
         viewModel.onComplete.observe(this) {
             listBinding.swipeRefreshLayout.isRefreshing = false
         }

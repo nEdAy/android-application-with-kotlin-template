@@ -81,17 +81,13 @@ dependencies {
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
-    // Net
-    api 'com.github.liangjingkanji:Net:3.5.2'
-
     // Moshi
     api 'com.squareup.moshi:moshi:1.14.0'
 
     // MMKV
     api 'com.github.DylanCaiCoding:MMKV-KTX:1.2.13'
 
-    // RecyclerViewAdapter Helper
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+    // Base RecyclerView
     api 'com.github.liangjingkanji:BRV:1.3.85'
 
     // Coil
