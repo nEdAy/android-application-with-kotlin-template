@@ -7,18 +7,18 @@ import retrofit2.http.Query
 
 interface HitokotoApi {
 
-    @GET("")
+    @GET("/")
     suspend fun hitokoto(): HitokotoResponse
 
     @POST("auth/login")
     suspend fun token(): BaseSentenceResponse<String>
 
     @GET("like")
-    suspend fun likeList(@Query("sentence_uuid") uuid: String): BaseHitokotoResponse<LikeListResponse>
+    suspend fun likeInfo(@Query("sentence_uuid") uuid: String): BaseHitokotoResponse<LikeInfoResponse>
 
     @POST("like")
-    suspend fun like(@Query("sentence_uuid") uuid: String): BaseHitokotoResponse<LikeResponse>
+    suspend fun markLike(@Query("sentence_uuid") uuid: String): BaseHitokotoResponse<MarkLikeResponse>
 
     @POST("like/cancel")
-    suspend fun likeCancel(@Query("sentence_uuid") uuid: String): BaseHitokotoResponse<Unit>
+    suspend fun cancelLike(@Query("sentence_uuid") uuid: String): BaseHitokotoResponse<Unit>
 }

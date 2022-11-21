@@ -19,6 +19,9 @@ class MainFragment : BaseBindingVMFragment<FragmentMainBinding, MainViewModel>()
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_MainFragment_to_SecondFragment)
         }
-        viewModel.getSentence()
+        viewModel.hitokoto.observe(this) {
+            binding.textview.text = it.hitokoto
+        }
+        viewModel.getHitokoto()
     }
 }

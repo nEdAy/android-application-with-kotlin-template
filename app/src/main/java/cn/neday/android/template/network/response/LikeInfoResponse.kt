@@ -2,7 +2,7 @@ package cn.neday.android.template.network.response
 
 import com.squareup.moshi.Json
 
-data class LikeListResponse(
+data class LikeInfoResponse(
     val sets: List<Set>,
     val total: Int
 )
