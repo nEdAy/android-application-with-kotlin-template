@@ -1,6 +1,6 @@
-package cn.neday.base.network.interceptor
+package cn.neday.android.template.network.interceptor
 
-import cn.neday.base.config.MMKVConfig.TOKEN
+import cn.neday.android.template.config.MMKVConfig.TOKEN
 import com.tencent.mmkv.MMKV
 import okhttp3.Interceptor
 import okhttp3.Response

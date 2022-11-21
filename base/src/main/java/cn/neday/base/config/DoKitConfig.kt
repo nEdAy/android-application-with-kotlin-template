@@ -1,12 +1,12 @@
 package cn.neday.base.config
 
-import android.app.Application
 import com.didichuxing.doraemonkit.DoKit
+import com.didichuxing.doraemonkit.util.Utils
 
 object DoKitConfig {
 
-    fun init(app: Application, productId: String) {
-        DoKit.Builder(app)
+    fun init(productId: String) {
+        DoKit.Builder(Utils.getApp())
             .productId(productId)
             .build()
     }

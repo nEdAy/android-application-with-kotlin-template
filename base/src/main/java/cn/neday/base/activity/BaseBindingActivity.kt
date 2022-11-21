@@ -6,10 +6,6 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import cn.neday.base.config.MMKVConfig.TOKEN
-import cn.neday.base.config.MMKVConfig.kv
-import com.blankj.utilcode.util.ActivityUtils
-import com.blankj.utilcode.util.StringUtils
 import com.dylanc.viewbinding.base.ActivityBinding
 import com.dylanc.viewbinding.base.ActivityBindingDelegate
 
@@ -25,10 +21,6 @@ abstract class BaseBindingActivity<VB : ViewBinding> : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (isCheckLogin && StringUtils.isTrimEmpty(kv.decodeString(TOKEN))) {
-            //TODO: Jump to Login Page
-            ActivityUtils.finishActivity(this)
-        }
         setContentViewWithBinding()
         prepareInitView()
         initView(savedInstanceState)

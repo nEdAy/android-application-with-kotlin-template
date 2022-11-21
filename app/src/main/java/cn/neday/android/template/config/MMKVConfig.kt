@@ -1,6 +1,6 @@
-package cn.neday.base.config
+package cn.neday.android.template.config
 
-import com.blankj.utilcode.util.Utils
+import com.didichuxing.doraemonkit.util.Utils
 import com.tencent.mmkv.MMKV
 
 object MMKVConfig {

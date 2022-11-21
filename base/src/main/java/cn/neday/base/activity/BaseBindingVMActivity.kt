@@ -1,9 +1,8 @@
 package cn.neday.base.activity
 
-import androidx.lifecycle.Observer
 import androidx.viewbinding.ViewBinding
 import cn.neday.base.viewmodel.BaseViewModel
-import com.blankj.utilcode.util.LogUtils
+import com.didichuxing.doraemonkit.util.LogUtils
 
 /**
  * Activity 基类 + Binding + ViewModel
@@ -18,8 +17,8 @@ abstract class BaseBindingVMActivity<VB : ViewBinding, ViewModel : BaseViewModel
     override fun prepareInitView() {
         super.prepareInitView()
         lifecycle.addObserver(mViewModel)
-        mViewModel.errMsg.observe(this, Observer {
+        mViewModel.errMsg.observe(this) {
             LogUtils.e(it)
-        })
+        }
     }
 }

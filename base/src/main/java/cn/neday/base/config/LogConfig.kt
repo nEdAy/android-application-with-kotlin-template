@@ -1,7 +1,7 @@
 package cn.neday.base.config
 
-import com.blankj.utilcode.util.AppUtils
-import com.blankj.utilcode.util.LogUtils
+import com.didichuxing.doraemonkit.util.AppUtils
+import com.didichuxing.doraemonkit.util.LogUtils
 
 object LogConfig {
 

@@ -2,7 +2,7 @@ package cn.neday.base.fragment
 
 import androidx.viewbinding.ViewBinding
 import cn.neday.base.viewmodel.BaseViewModel
-import com.blankj.utilcode.util.LogUtils
+import com.didichuxing.doraemonkit.util.LogUtils
 
 /**
  * Fragment 基类 + Binding + ViewModel

@@ -2,7 +2,8 @@ package cn.neday.base.network
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.blankj.utilcode.util.NetworkUtils
+import com.didichuxing.doraemonkit.util.NetworkUtils
+import com.didichuxing.doraemonkit.util.ToastUtils
 import kotlinx.coroutines.*
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
@@ -17,7 +18,7 @@ fun ViewModel.start(start: (() -> Unit)): ViewModel {
         if (NetworkUtils.isConnected()) {
             start()
         } else {
-            // TODO: show network tips
+            ToastUtils.showShort("无网络")
         }
     }
     return this

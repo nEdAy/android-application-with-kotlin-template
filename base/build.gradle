@@ -33,16 +33,9 @@ dependencies {
 
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
 
-    api 'androidx.databinding:viewbinding:7.3.1'
-
-    api 'androidx.startup:startup-runtime:1.1.1'
-
-    api 'com.github.DylanCaiCoding.Longan:longan:1.1.1'
-
-    api 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-base:2.1.0'
-
     // Kotlinx Coroutines
     def coroutines_version = "1.6.4"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
     // AndroidX UI
@@ -54,6 +47,11 @@ dependencies {
     api 'androidx.recyclerview:recyclerview:1.2.1'
     api 'androidx.cardview:cardview:1.0.0'
     api 'androidx.viewpager2:viewpager2:1.0.0'
+    api 'androidx.startup:startup-runtime:1.1.1'
+
+    // View Binding
+    api 'androidx.databinding:viewbinding:7.3.1'
+    api 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-base:2.1.0'
 
     // Navigation
     api 'androidx.navigation:navigation-fragment-ktx:2.5.3'
@@ -83,28 +81,35 @@ dependencies {
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
+    // Net
+    api 'com.github.liangjingkanji:Net:3.5.2'
+
     // Moshi
     api 'com.squareup.moshi:moshi:1.14.0'
 
     // MMKV
-    api 'com.tencent:mmkv-static:1.0.22'
+    api 'com.github.DylanCaiCoding:MMKV-KTX:1.2.13'
 
     // RecyclerViewAdapter Helper
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+    api 'com.github.liangjingkanji:BRV:1.3.85'
 
     // Coil
     api 'io.coil-kt:coil:2.2.2'
 
+    // Loading
+    api 'com.github.DylanCaiCoding.LoadingStateView:loadingstateview-ktx:4.0.2'
+
     // Utils
-    api 'com.blankj:utilcodex:1.31.1'
+    api 'com.github.DylanCaiCoding.Longan:longan:1.1.1'
 
     // Chuck - http log/debug
     debugApi "com.github.chuckerteam.chucker:library:3.5.2"
     releaseApi "com.github.chuckerteam.chucker:library-no-op:3.5.2"
 
     // DoKit
-    debugImplementation 'io.github.didi.dokit:dokitx:3.5.0'
-    releaseImplementation 'io.github.didi.dokit:dokitx-no-op:3.5.0'
+    debugApi 'io.github.didi.dokit:dokitx:3.5.0'
+    releaseApi 'io.github.didi.dokit:dokitx-no-op:3.5.0'
 
     testApi 'junit:junit:4.13.2'
     androidTestApi 'androidx.test.ext:junit:1.1.4'
