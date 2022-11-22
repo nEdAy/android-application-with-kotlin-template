@@ -1,6 +1,6 @@
-package cn.neday.android.template.network.response
+package cn.neday.android.template.network.entity
 
-data class BaseSentenceResponse<T>(
+data class SentenceApiResponse<T>(
     // "success" "error",
     val status: String,
     val data: T,

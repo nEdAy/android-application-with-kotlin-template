@@ -3,11 +3,13 @@ package cn.neday.android.template.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import cn.neday.android.template.network.repository.HitokotoRepository
-import cn.neday.android.template.network.response.HitokotoResponse
+import cn.neday.android.template.network.response.LikeSet
 import cn.neday.base.SingleLiveEvent
 import cn.neday.base.network.requestAsync
 import cn.neday.base.network.then
 import cn.neday.base.viewmodel.BaseViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 /**
  * MainViewModel
@@ -16,15 +18,45 @@ import cn.neday.base.viewmodel.BaseViewModel
  */
 class MainViewModel(private val repository: HitokotoRepository) : BaseViewModel() {
 
-    val hitokoto: MutableLiveData<HitokotoResponse> = SingleLiveEvent()
+    private val _sentence = MutableStateFlow("")
+    val sentence: StateFlow<String> = _sentence
+
+    private val _author = MutableStateFlow("")
+    val author: StateFlow<String> = _author
+
+    private val _lickCount = MutableStateFlow(0)
+    val lickCount: StateFlow<Int> = _lickCount
+
+    val likeInfo: MutableLiveData<List<LikeSet>> = SingleLiveEvent()
 
     fun getHitokoto() {
         requestAsync {
             repository.hitokoto()
         }.then(viewModelScope, {
-            hitokoto.value = it
+            _sentence.value = it.hitokoto
+            _author.value = it.from
+            getHitokotoLikeInfo(it.uuid)
         }, {
-            errMsg.value = "请求错误"
+            errorMessage.value = "请求错误"
+        }, {
+            onComplete.call()
+        })
+    }
+
+
+    private fun getHitokotoLikeInfo(uuid: String) {
+        requestAsync {
+            repository.likeInfo(uuid)
+        }.then(viewModelScope, {
+            if (it.status == 200) {
+                val likeInfoSets = it.data.first().sets
+                likeInfo.value = likeInfoSets
+                _lickCount.value = likeInfoSets.size
+            } else {
+                errorMessage.value = it.message
+            }
+        }, {
+            errorMessage.value = "请求错误"
         }, {
             onComplete.call()
         })

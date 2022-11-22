@@ -25,6 +25,8 @@ val httpClientModule = module {
             .baseUrl(BASE_URL)
             .client(get())
             .addConverterFactory(MoshiConverterFactory.create())
+            // 将返回数据组织成 LiveData
+//            .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .build()
     }
 

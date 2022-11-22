@@ -17,7 +17,7 @@ abstract class BaseBindingVMActivity<VB : ViewBinding, ViewModel : BaseViewModel
     override fun prepareInitView() {
         super.prepareInitView()
         lifecycle.addObserver(mViewModel)
-        mViewModel.errMsg.observe(this) {
+        mViewModel.errorMessage.observe(this) {
             LogUtils.e(it)
         }
     }

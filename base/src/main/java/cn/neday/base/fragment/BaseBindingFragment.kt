@@ -5,9 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewbinding.ViewBinding
 import com.dylanc.viewbinding.base.FragmentBinding
 import com.dylanc.viewbinding.base.FragmentBindingDelegate
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 /**
  * Fragment 基类 + Binding
@@ -40,4 +45,14 @@ abstract class BaseBindingFragment<VB : ViewBinding> : Fragment(),
     }
 
     abstract fun initView()
+}
+
+
+inline fun Fragment.launchAndRepeatWithViewLifecycle(
+    minActiveState: Lifecycle.State = Lifecycle.State.STARTED,
+    crossinline block: suspend CoroutineScope.() -> Unit
+) = viewLifecycleOwner.lifecycleScope.launch {
+    viewLifecycleOwner.lifecycle.repeatOnLifecycle(minActiveState) {
+        block()
+    }
 }

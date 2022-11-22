@@ -1,6 +1,6 @@
-package cn.neday.android.template.network.response
+package cn.neday.android.template.network.entity
 
-data class BaseHitokotoResponse<T>(
+data class HitokotoApiResponse<T>(
     // 200
     // 状态码。正整数定义符合 HTTP 状态码约束，自定义错误为负值。请注意，由于偷懒，目前错误码存在重复定义，请以具体接口为准。
     val status: Int,

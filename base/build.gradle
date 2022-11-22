@@ -42,11 +42,13 @@ dependencies {
     api 'androidx.core:core-ktx:1.9.0'
     api 'androidx.fragment:fragment-ktx:1.5.4'
     api 'androidx.appcompat:appcompat:1.5.1'
+
     api 'androidx.constraintlayout:constraintlayout:2.1.4'
     api 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
     api 'androidx.recyclerview:recyclerview:1.2.1'
     api 'androidx.cardview:cardview:1.0.0'
     api 'androidx.viewpager2:viewpager2:1.0.0'
+
     api 'androidx.startup:startup-runtime:1.1.1'
 
     // View Binding
@@ -67,6 +69,8 @@ dependencies {
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
     api "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    api "androidx.lifecycle:lifecycle-livedata-ktx:2.6.0-alpha03"
 
     // Koin for Android Architecture ViewModel
     api "io.insert-koin:koin-android:3.2.2"

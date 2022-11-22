@@ -23,7 +23,7 @@ class ListViewModel(private val repository: SentenceRepository) : BaseViewModel(
         }.then(viewModelScope, {
             val token = it.data
         }, {
-            errMsg.value = it
+            errorMessage.value = it
         }, {
             onComplete.call()
         })
@@ -35,7 +35,7 @@ class ListViewModel(private val repository: SentenceRepository) : BaseViewModel(
         }.then(viewModelScope, {
             sentence.value = it.data
         }, {
-            errMsg.value = it
+            errorMessage.value = it
         }, {
             onComplete.call()
         })

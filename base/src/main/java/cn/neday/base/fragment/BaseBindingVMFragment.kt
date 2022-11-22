@@ -17,7 +17,7 @@ abstract class BaseBindingVMFragment<VB : ViewBinding, VM : BaseViewModel> :
     override fun prepareInitView() {
         super.prepareInitView()
         lifecycle.addObserver(viewModel)
-        viewModel.errMsg.observe(this) {
+        viewModel.errorMessage.observe(this) {
             LogUtils.e(it)
         }
     }

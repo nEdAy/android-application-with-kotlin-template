@@ -1,7 +1,7 @@
 package cn.neday.android.template.network.repository
 
 import cn.neday.android.template.network.api.SentenceApi
-import cn.neday.android.template.network.response.BaseSentenceResponse
+import cn.neday.android.template.network.entity.SentenceApiResponse
 import cn.neday.android.template.network.response.SentenceResponse
 
 /**
@@ -11,7 +11,7 @@ import cn.neday.android.template.network.response.SentenceResponse
  */
 class SentenceRepository(private val sentenceApi: SentenceApi) {
 
-    suspend fun token(): BaseSentenceResponse<String> = sentenceApi.token()
+    suspend fun token(): SentenceApiResponse<String> = sentenceApi.token()
 
-    suspend fun sentence(): BaseSentenceResponse<SentenceResponse> = sentenceApi.sentence()
+    suspend fun sentence(): SentenceApiResponse<SentenceResponse> = sentenceApi.sentence()
 }

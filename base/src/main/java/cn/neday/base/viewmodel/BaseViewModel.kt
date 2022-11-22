@@ -11,6 +11,6 @@ import cn.neday.base.SingleLiveEvent
  */
 open class BaseViewModel : ViewModel(), LifecycleObserver {
 
-    val errMsg = SingleLiveEvent<String>()
+    val errorMessage = SingleLiveEvent<String>()
     val onComplete = SingleLiveEvent<Unit>()
 }
