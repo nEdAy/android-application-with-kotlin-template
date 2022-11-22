@@ -2,6 +2,8 @@ package cn.neday.android.template.network.repository
 
 import cn.neday.android.template.network.api.WanAndroidApi
 import cn.neday.android.template.network.entity.ApiResponse
+import cn.neday.android.template.network.response.ArticleResponse
+import cn.neday.android.template.network.response.BannerResponse
 
 /**
  * WanAndroid Repository
@@ -12,5 +14,7 @@ class WanAndroidRepository(private val wanAndroidApi: WanAndroidApi) : BaseRepos
 
     suspend fun article(
         pageIndex: Int, pageSize: Int
-    ): ApiResponse<String> = executeHttp { wanAndroidApi.article(pageIndex, pageSize) }
+    ): ApiResponse<ArticleResponse> = executeHttp { wanAndroidApi.article(pageIndex, pageSize) }
+
+    suspend fun banner(): ApiResponse<List<BannerResponse>> = executeHttp { wanAndroidApi.banner() }
 }
