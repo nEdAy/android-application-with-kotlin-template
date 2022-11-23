@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_nav_index"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_nav_home"
+        android:title="@string/bottom_nav_home" />
+    <item
+        android:id="@+id/bottom_nav_tree"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_nav_tree"
+        android:title="@string/bottom_nav_tree" />
+    <item
+        android:id="@+id/bottom_nav_project"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_nav_project"
+        android:title="@string/bottom_nav_project" />
+    <item
+        android:id="@+id/action_stopwatch"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_nav_mine"
+        android:title="@string/bottom_nav_mine" />
+</menu>

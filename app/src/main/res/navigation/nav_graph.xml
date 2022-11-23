@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/MainFragment"
-        android:name="cn.neday.android.template.fragment.MainFragment"
+        android:name="cn.neday.android.template.fragment.HomeFragment"
         android:label="@string/main_fragment_label"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/action_MainFragment_to_SecondFragment"

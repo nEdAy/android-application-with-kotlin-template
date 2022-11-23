@@ -10,8 +10,8 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>>
 
-    <string name="bottom_nav_home">Index</string>
-    <string name="bottom_nav_tree">System</string>
-    <string name="bottom_nav_project">Project</string>
-    <string name="bottom_nav_mine">Mine</string>
+    <string name="bottom_nav_home">首页</string>
+    <string name="bottom_nav_tree">体系</string>
+    <string name="bottom_nav_project">项目</string>
+    <string name="bottom_nav_mine">我的</string>
 </resources>

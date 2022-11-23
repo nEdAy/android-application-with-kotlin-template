@@ -1,8 +1,8 @@
 package cn.neday.android.template.network.response
 
-data class ArticleResponse(
+data class ArticleListResponse(
     val curPage: Int,
-    val datas: List<Data>,
+    val datas: List<Article>,
     val offset: Int,
     val over: Boolean,
     val pageCount: Int,
@@ -10,7 +10,7 @@ data class ArticleResponse(
     val total: Int
 )
 
-data class Data(
+data class Article(
     val adminAdd: Boolean,
     val apkLink: String,
     val audit: Int,

@@ -2,13 +2,13 @@ package cn.neday.android.template.fragment
 
 import androidx.recyclerview.widget.GridLayoutManager
 import cn.neday.android.template.adapter.SentenceAdapter
-import cn.neday.android.template.databinding.FragmentMainBinding
+import cn.neday.android.template.databinding.FragmentLoginBinding
 import cn.neday.android.template.databinding.IncludeListBinding
 import cn.neday.android.template.viewmodel.ListViewModel
 import cn.neday.base.fragment.BaseBindingVMFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginFragment : BaseBindingVMFragment<FragmentMainBinding, ListViewModel>() {
+class LoginFragment : BaseBindingVMFragment<FragmentLoginBinding, ListViewModel>() {
 
     private val adapter = SentenceAdapter()
     private var keyword = ""

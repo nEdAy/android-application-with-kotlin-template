@@ -12,11 +12,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 /**
- * MainViewModel
+ * HomeViewModel
  *
  * @author nEdAy
  */
-class MainViewModel(private val repository: HitokotoRepository) : BaseViewModel() {
+class HomeViewModel(private val repository: HitokotoRepository) : BaseViewModel() {
 
     private val _sentence = MutableStateFlow("")
     val sentence: StateFlow<String> = _sentence
