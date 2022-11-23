@@ -3,18 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/MainFragment">
+    app:startDestination="@id/bottom_nav_home">
 
     <fragment
-        android:id="@+id/MainFragment"
-        android:name="cn.neday.android.template.fragment.HomeFragment"
-        android:label="@string/main_fragment_label"
+        android:id="@+id/bottom_nav_home"
+        android:name="cn.neday.android.template.fragment.main.HomeFragment"
+        android:label="@string/bottom_nav_home"
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/action_MainFragment_to_SecondFragment"
+            android:id="@+id/action_HomeFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/bottom_nav_tree"
+        android:name="cn.neday.android.template.fragment.main.TreeFragment"
+        android:label="@string/bottom_nav_tree"
+        tools:layout="@layout/fragment_tree">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/bottom_nav_project"
+        android:name="cn.neday.android.template.fragment.main.ProjectFragment"
+        android:label="@string/bottom_nav_home"
+        tools:layout="@layout/fragment_project">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/bottom_nav_account"
+        android:name="cn.neday.android.template.fragment.main.AccountFragment"
+        android:label="@string/bottom_nav_account"
+        tools:layout="@layout/fragment_account">
+
+    </fragment>
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="cn.neday.android.template.fragment.SecondFragment"
@@ -22,7 +47,7 @@
         tools:layout="@layout/fragment_second">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/MainFragment" />
+            android:id="@+id/action_SecondFragment_to_HomeFragment"
+            app:destination="@id/bottom_nav_home" />
     </fragment>
 </navigation>

@@ -13,7 +13,7 @@ class SecondFragment : BaseBindingFragment<FragmentSecondBinding>() {
 
     override fun initView() {
         binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            findNavController().navigate(R.id.action_SecondFragment_to_HomeFragment)
         }
     }
 }

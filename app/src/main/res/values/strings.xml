@@ -2,7 +2,6 @@
     <string name="app_name">古诗词·一言</string>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="main_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
@@ -13,5 +12,5 @@
     <string name="bottom_nav_home">Index</string>
     <string name="bottom_nav_tree">System</string>
     <string name="bottom_nav_project">Project</string>
-    <string name="bottom_nav_mine">Mine</string>
+    <string name="bottom_nav_account">Mine</string>
 </resources>
