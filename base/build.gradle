@@ -57,6 +57,9 @@ dependencies {
     // WorkManager Kotlin + coroutines
     api "androidx.work:work-runtime-ktx:2.7.1"
 
+    // APIs for SplashScreen
+    api "androidx.core:core-splashscreen:1.0.0"
+
     api 'androidx.startup:startup-runtime:1.2.0-alpha01'
 
     // View Binding
