@@ -20,9 +20,6 @@ class LoginFragment : BaseBindingVMFragment<FragmentMainBinding, ListViewModel>(
         val listBinding = IncludeListBinding.bind(binding.root)
         initAdapter(listBinding)
         initSwipeToRefresh(listBinding)
-        viewModel.sentence.observe(this) {
-
-        }
     }
 
     private fun initSearchHeader() {
@@ -41,7 +38,6 @@ class LoginFragment : BaseBindingVMFragment<FragmentMainBinding, ListViewModel>(
     }
 
     private fun searchUsersByKeyword(keyword: String) {
-        viewModel.getSentence()
     }
 
     private fun initAdapter(listBinding: IncludeListBinding) {
