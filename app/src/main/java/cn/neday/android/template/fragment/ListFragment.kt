@@ -6,6 +6,7 @@ import cn.neday.android.template.databinding.FragmentMainBinding
 import cn.neday.android.template.databinding.IncludeListBinding
 import cn.neday.android.template.viewmodel.ListViewModel
 import cn.neday.base.fragment.BaseBindingVMFragment
+import cn.neday.base.fragment.launchAndRepeatWithViewLifecycle
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ListFragment : BaseBindingVMFragment<FragmentMainBinding, ListViewModel>() {
@@ -20,8 +21,15 @@ class ListFragment : BaseBindingVMFragment<FragmentMainBinding, ListViewModel>()
         val listBinding = IncludeListBinding.bind(binding.root)
         initAdapter(listBinding)
         initSwipeToRefresh(listBinding)
-        viewModel.sentence.observe(this) {
+        launchAndRepeatWithViewLifecycle {
+            viewModel.article.collect {
 
+            }
+        }
+        launchAndRepeatWithViewLifecycle {
+            viewModel.banner.collect {
+
+            }
         }
     }
 
@@ -41,7 +49,6 @@ class ListFragment : BaseBindingVMFragment<FragmentMainBinding, ListViewModel>()
     }
 
     private fun searchUsersByKeyword(keyword: String) {
-        viewModel.getSentence()
     }
 
     private fun initAdapter(listBinding: IncludeListBinding) {

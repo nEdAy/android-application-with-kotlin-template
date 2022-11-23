@@ -33,11 +33,6 @@ class MainFragment : BaseBindingVMFragment<FragmentMainBinding, MainViewModel>()
                 binding.tvFrom.text = "—— 「${it}」"
             }
         }
-        launchAndRepeatWithViewLifecycle {
-            viewModel.author.collect {
-                binding.tvFrom.text = "—— 「${it}」"
-            }
-        }
         viewModel.likeInfo.observe(this) {
             binding.likeInfo.text = it.size.toString()
         }

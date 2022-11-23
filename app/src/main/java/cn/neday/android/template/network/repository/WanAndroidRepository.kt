@@ -13,7 +13,7 @@ import cn.neday.android.template.network.response.BannerResponse
 class WanAndroidRepository(private val wanAndroidApi: WanAndroidApi) : BaseRepository() {
 
     suspend fun article(
-        pageIndex: Int, pageSize: Int
+        pageIndex: Int? = null, pageSize: Int? = null
     ): ApiResponse<ArticleResponse> = executeHttp { wanAndroidApi.article(pageIndex, pageSize) }
 
     suspend fun banner(): ApiResponse<List<BannerResponse>> = executeHttp { wanAndroidApi.banner() }

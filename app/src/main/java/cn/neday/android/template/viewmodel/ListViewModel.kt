@@ -1,27 +1,34 @@
 package cn.neday.android.template.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import cn.neday.android.template.network.repository.SentenceRepository
-import cn.neday.android.template.network.response.SentenceResponse
+import cn.neday.android.template.network.entity.ApiResponse
+import cn.neday.android.template.network.repository.WanAndroidRepository
+import cn.neday.android.template.network.response.ArticleResponse
+import cn.neday.android.template.network.response.BannerResponse
 import cn.neday.base.network.requestAsync
 import cn.neday.base.network.then
 import cn.neday.base.viewmodel.BaseViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 /**
  * ListViewModel
  *
  * @author nEdAy
  */
-class ListViewModel(private val repository: SentenceRepository) : BaseViewModel() {
+class ListViewModel(private val repository: WanAndroidRepository) : BaseViewModel() {
 
-    val sentence: MutableLiveData<SentenceResponse?> = MutableLiveData()
+    private val _article = MutableStateFlow(ApiResponse<ArticleResponse>())
+    val article: StateFlow<ApiResponse<ArticleResponse>> = _article
 
-    fun getToken() {
+    private val _banner = MutableStateFlow(ApiResponse<List<BannerResponse>>())
+    val banner: StateFlow<ApiResponse<List<BannerResponse>>> = _banner
+
+    fun getArticle() {
         requestAsync {
-            repository.token()
+            repository.article()
         }.then(viewModelScope, {
-            val token = it.data
+            _article.value = it
         }, {
             errorMessage.value = it
         }, {
@@ -29,11 +36,11 @@ class ListViewModel(private val repository: SentenceRepository) : BaseViewModel(
         })
     }
 
-    fun getSentence() {
+    fun getBanner() {
         requestAsync {
-            repository.sentence()
+            repository.banner()
         }.then(viewModelScope, {
-            sentence.value = it.data
+            _banner.value = it
         }, {
             errorMessage.value = it
         }, {
