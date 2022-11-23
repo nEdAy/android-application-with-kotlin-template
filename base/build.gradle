@@ -49,15 +49,26 @@ dependencies {
     api 'androidx.cardview:cardview:1.0.0'
     api 'androidx.viewpager2:viewpager2:1.0.0'
 
-    api 'androidx.startup:startup-runtime:1.1.1'
+    // Paging
+    api 'androidx.paging:paging-runtime-ktx:3.2.0-alpha03'
+    // optional - Jetpack Compose integration
+    api "androidx.paging:paging-compose:1.0.0-alpha17"
+
+    // WorkManager Kotlin + coroutines
+    api "androidx.work:work-runtime-ktx:2.7.1"
+
+    api 'androidx.startup:startup-runtime:1.2.0-alpha01'
 
     // View Binding
     api 'androidx.databinding:viewbinding:7.3.1'
     api 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-base:2.1.0'
 
     // Navigation
-    api 'androidx.navigation:navigation-fragment-ktx:2.5.3'
-    api 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    def nav_version = "2.5.3"
+    api("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    api("androidx.navigation:navigation-ui-ktx:$nav_version")
+    // Jetpack Compose Integration
+    api("androidx.navigation:navigation-compose:$nav_version")
 
     // Material UI
     api 'com.google.android.material:material:1.7.0'
@@ -74,6 +85,15 @@ dependencies {
     api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
     // if using Java8, use the following instead of lifecycle-compiler
     api "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    def room_version = "2.5.0-beta02"
+    api("androidx.room:room-runtime:$room_version")
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$room_version")
+    // optional - Kotlin Extensions and Coroutines support for Room
+    api("androidx.room:room-ktx:$room_version")
+    // optional - Paging 3 Integration
+    api("androidx.room:room-paging:$room_version")
 
     // Koin for Android Architecture ViewModel
     api "io.insert-koin:koin-android:3.2.2"

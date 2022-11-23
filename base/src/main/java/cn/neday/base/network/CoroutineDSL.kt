@@ -43,7 +43,7 @@ fun <T> ViewModel.requestAsync(loader: suspend () -> T): Deferred<T> {
 fun <T> Deferred<T>.then(
     viewModelScope: CoroutineScope,
     onSuccess: suspend (T) -> Unit,
-    onError: suspend (String) -> Unit,
+    onError: (suspend (String) -> Unit)? = null,
     onComplete: (() -> Unit)? = null
 ): Job {
     return viewModelScope.launch(context = Dispatchers.Main) {
@@ -56,10 +56,10 @@ fun <T> Deferred<T>.then(
             }
             e.printStackTrace()
             when (e) {
-                is UnknownHostException -> onError("Unknown Host Exception!")
-                is TimeoutException -> onError("Timeout Exception!")
-                is SocketTimeoutException -> onError("Socket Timeout Exception!")
-                else -> onError("Other Exception!")
+                is UnknownHostException -> onError?.invoke("Unknown Host Exception!")
+                is TimeoutException -> onError?.invoke("Timeout Exception!")
+                is SocketTimeoutException -> onError?.invoke("Socket Timeout Exception!")
+                else -> onError?.invoke("Other Exception!")
             }
         } finally {
             onComplete?.invoke()
