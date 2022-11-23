@@ -47,7 +47,7 @@ dependencies {
     api 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
     api 'androidx.recyclerview:recyclerview:1.2.1'
     api 'androidx.cardview:cardview:1.0.0'
-    api 'androidx.viewpager2:viewpager2:1.0.0'
+    api 'androidx.viewpager2:viewpager2:1.1.0-beta01'
 
     // Paging
     api 'androidx.paging:paging-runtime-ktx:3.2.0-alpha03'
