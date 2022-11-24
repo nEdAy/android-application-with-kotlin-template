@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.dylanc.viewbinding.base.ActivityBinding
 import com.dylanc.viewbinding.base.ActivityBindingDelegate
+import com.therouter.TheRouter
 
 /**
  * Activity 基类 + Binding
@@ -21,6 +22,7 @@ abstract class BaseBindingActivity<VB : ViewBinding> : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        TheRouter.inject(this);
         setContentViewWithBinding()
         prepareInitView()
         initView(savedInstanceState)

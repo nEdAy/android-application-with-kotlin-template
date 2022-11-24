@@ -11,6 +11,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewbinding.ViewBinding
 import com.dylanc.viewbinding.base.FragmentBinding
 import com.dylanc.viewbinding.base.FragmentBindingDelegate
+import com.therouter.TheRouter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -22,16 +23,17 @@ import kotlinx.coroutines.launch
 abstract class BaseBindingFragment<VB : ViewBinding> : Fragment(),
     FragmentBinding<VB> by FragmentBindingDelegate() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        TheRouter.inject(this);
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         return createViewWithBinding(inflater, container)
-    }
-
-    protected fun popBackStack() {
-        activity?.supportFragmentManager?.popBackStack()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,6 +47,10 @@ abstract class BaseBindingFragment<VB : ViewBinding> : Fragment(),
     }
 
     abstract fun initView()
+
+    protected fun popBackStack() {
+        activity?.supportFragmentManager?.popBackStack()
+    }
 }
 
 
