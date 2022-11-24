@@ -28,7 +28,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AndroidTemplate.NoActionBar" />
+            android:theme="@style/Theme.App.NoActionBar" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
