@@ -1,22 +1,19 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs.kotlin'
 }
-apply plugin: 'therouter'
 
 android {
+    namespace 'cn.neday.android.module'
     compileSdk 33
 
     defaultConfig {
-        applicationId "cn.neday.android.template"
         minSdk 21
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -31,9 +28,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    buildFeatures {
-        viewBinding true
     }
 }
 
