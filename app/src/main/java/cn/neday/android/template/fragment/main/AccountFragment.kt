@@ -2,14 +2,10 @@ package cn.neday.android.template.fragment.main
 
 import android.annotation.SuppressLint
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import cn.neday.android.template.R
 import cn.neday.android.template.databinding.FragmentAccountBinding
 import cn.neday.android.template.viewmodel.HomeViewModel
 import cn.neday.base.fragment.BaseBindingVMFragment
 import cn.neday.base.fragment.launchAndRepeatWithViewLifecycle
-import com.dylanc.longan.doOnClick
-import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
@@ -21,13 +17,6 @@ class AccountFragment : BaseBindingVMFragment<FragmentAccountBinding, HomeViewMo
 
     @SuppressLint("SetTextI18n")
     override fun initView() {
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-        binding.buttonFirst.doOnClick {
-            findNavController().navigate(R.id.action_HomeFragment_to_SecondFragment)
-        }
         launchAndRepeatWithViewLifecycle {
             viewModel.sentence.collect {
                 binding.tvHitokoto.text = it
