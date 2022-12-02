@@ -2,7 +2,7 @@ package cn.neday.base.fragment
 
 import androidx.viewbinding.ViewBinding
 import cn.neday.base.viewmodel.BaseViewModel
-import com.didichuxing.doraemonkit.util.LogUtils
+import com.dylanc.longan.logError
 
 /**
  * Fragment 基类 + Binding + ViewModel
@@ -18,7 +18,7 @@ abstract class BaseBindingVMFragment<VB : ViewBinding, VM : BaseViewModel> :
         super.prepareInitView()
         lifecycle.addObserver(viewModel)
         viewModel.errorMessage.observe(this) {
-            LogUtils.e(it)
+            logError(it)
         }
     }
 }

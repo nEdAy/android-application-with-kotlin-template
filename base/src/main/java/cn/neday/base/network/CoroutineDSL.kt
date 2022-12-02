@@ -2,9 +2,16 @@ package cn.neday.base.network
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.didichuxing.doraemonkit.util.NetworkUtils
-import com.didichuxing.doraemonkit.util.ToastUtils
-import kotlinx.coroutines.*
+import com.drake.tooltip.toast
+import com.dylanc.longan.isNetworkAvailable
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import java.util.concurrent.TimeoutException
@@ -15,10 +22,10 @@ import java.util.concurrent.TimeoutException
  */
 fun ViewModel.start(start: (() -> Unit)): ViewModel {
     viewModelScope.launch(Dispatchers.Main) {
-        if (NetworkUtils.isConnected()) {
+        if (isNetworkAvailable) {
             start()
         } else {
-            ToastUtils.showShort("无网络")
+            toast("无网络")
         }
     }
     return this

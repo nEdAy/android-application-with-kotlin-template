@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/bottom_nav_home"
-        android:name="cn.neday.android.template.fragment.main.HomeFragment"
+        android:name="cn.neday.android.app.fragment.main.HomeFragment"
         android:label="@string/bottom_nav_home"
         tools:layout="@layout/fragment_home">
 
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/bottom_nav_tree"
-        android:name="cn.neday.android.template.fragment.main.TreeFragment"
+        android:name="cn.neday.android.app.fragment.main.TreeFragment"
         android:label="@string/bottom_nav_tree"
         tools:layout="@layout/fragment_tree">
 
@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/bottom_nav_project"
-        android:name="cn.neday.android.template.fragment.main.ProjectFragment"
+        android:name="cn.neday.android.app.fragment.main.ProjectFragment"
         android:label="@string/bottom_nav_home"
         tools:layout="@layout/fragment_project">
 
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/bottom_nav_account"
-        android:name="cn.neday.android.template.fragment.main.AccountFragment"
+        android:name="cn.neday.android.app.fragment.main.AccountFragment"
         android:label="@string/bottom_nav_account"
         tools:layout="@layout/fragment_account">
 
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="cn.neday.android.template.fragment.SecondFragment"
+        android:name="cn.neday.android.app.fragment.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 

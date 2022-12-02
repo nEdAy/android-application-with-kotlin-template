@@ -2,7 +2,7 @@ package cn.neday.base.activity
 
 import androidx.viewbinding.ViewBinding
 import cn.neday.base.viewmodel.BaseViewModel
-import com.didichuxing.doraemonkit.util.LogUtils
+import com.dylanc.longan.logError
 
 /**
  * Activity 基类 + Binding + ViewModel
@@ -18,7 +18,7 @@ abstract class BaseBindingVMActivity<VB : ViewBinding, ViewModel : BaseViewModel
         super.prepareInitView()
         lifecycle.addObserver(mViewModel)
         mViewModel.errorMessage.observe(this) {
-            LogUtils.e(it)
+            logError(it)
         }
     }
 }

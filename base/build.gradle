@@ -5,6 +5,7 @@ plugins {
 }
 
 android {
+    namespace 'cn.neday.android.base'
     compileSdk 33
 
     defaultConfig {
@@ -36,7 +37,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.20"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     // Kotlinx Coroutines
     def coroutines_version = "1.6.4"
@@ -78,7 +79,6 @@ dependencies {
 
     // Material UI
     api 'com.google.android.material:material:1.7.0'
-    api 'com.google.android:flexbox:1.1.0'
 
     def lifecycle_version = "2.6.0-alpha03"
     // ViewModel
@@ -96,7 +96,6 @@ dependencies {
 
     // TheRouter
     api("cn.therouter:router:$therouter_version")
-    kapt("cn.therouter:apt:$therouter_version")
 
     def room_version = "2.5.0-beta02"
     api("androidx.room:room-runtime:$room_version")
@@ -134,18 +133,17 @@ dependencies {
     // Utils
     api 'com.github.DylanCaiCoding.Longan:longan:1.1.1'
 
+    // Toast/BubbleDialog
+    api 'com.github.liangjingkanji:Tooltip:1.2.2'
+
     // Chuck - http log/debug
     debugApi "com.github.chuckerteam.chucker:library:3.5.2"
     releaseApi "com.github.chuckerteam.chucker:library-no-op:3.5.2"
 
-    // DoKit
-    debugApi 'io.github.didi.dokit:dokitx:3.5.0'
-    releaseApi 'io.github.didi.dokit:dokitx-no-op:3.5.0'
-
     // Leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
 
-    testApi 'junit:junit:4.13.2'
-    androidTestApi 'androidx.test.ext:junit:1.1.4'
-    androidTestApi 'androidx.test.espresso:espresso-core:3.5.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 }
