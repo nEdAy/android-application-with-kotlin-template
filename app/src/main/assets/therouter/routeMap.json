@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "path": "/auth",
+    "className": "cn.neday.android.business.auth.activity.AuthActivity",
+    "action": "",
+    "description": "授权页面",
+    "params": {}
+  }
+]

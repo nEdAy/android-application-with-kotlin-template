@@ -2,8 +2,9 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
+    // id "com.google.devtools.ksp"
+    id 'kotlin-kapt'
     id 'therouter'
-    id "com.google.devtools.ksp"
 }
 apply plugin: 'com.rocketx'
 
@@ -41,7 +42,7 @@ android {
 }
 
 dependencies {
-    ksp("cn.therouter:apt:$therouter_version")
+    kapt("cn.therouter:apt:$therouter_version")
     implementation project(':business')
     runtimeOnly project(':business-auth')
 
