@@ -1,25 +1,21 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'androidx.navigation.safeargs.kotlin'
-    id 'therouter'
     id "com.google.devtools.ksp"
 }
-apply plugin: 'com.rocketx'
 
 android {
-    namespace = "cn.neday.android.app"
+    namespace 'cn.neday.android.business.auth'
     compileSdk 33
 
     defaultConfig {
-        applicationId "cn.neday.android.app"
         minSdk 21
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
+    resourcePrefix "business_auth_"
 
     buildTypes {
         release {
@@ -36,14 +32,12 @@ android {
     }
     buildFeatures {
         viewBinding true
-        buildConfig true
     }
 }
 
 dependencies {
     ksp("cn.therouter:apt:$therouter_version")
     implementation project(':business')
-    runtimeOnly project(':business-auth')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'

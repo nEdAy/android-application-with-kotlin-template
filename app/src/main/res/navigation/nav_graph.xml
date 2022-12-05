@@ -9,45 +9,23 @@
         android:id="@+id/bottom_nav_home"
         android:name="cn.neday.android.app.fragment.main.HomeFragment"
         android:label="@string/bottom_nav_home"
-        tools:layout="@layout/fragment_home">
-
-        <action
-            android:id="@+id/action_HomeFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/bottom_nav_tree"
         android:name="cn.neday.android.app.fragment.main.TreeFragment"
         android:label="@string/bottom_nav_tree"
-        tools:layout="@layout/fragment_tree">
-
-    </fragment>
+        tools:layout="@layout/fragment_tree" />
 
     <fragment
         android:id="@+id/bottom_nav_project"
         android:name="cn.neday.android.app.fragment.main.ProjectFragment"
         android:label="@string/bottom_nav_home"
-        tools:layout="@layout/fragment_project">
-
-    </fragment>
+        tools:layout="@layout/fragment_project" />
 
     <fragment
         android:id="@+id/bottom_nav_account"
         android:name="cn.neday.android.app.fragment.main.AccountFragment"
         android:label="@string/bottom_nav_account"
-        tools:layout="@layout/fragment_account">
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="cn.neday.android.app.fragment.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_HomeFragment"
-            app:destination="@id/bottom_nav_home" />
-    </fragment>
+        tools:layout="@layout/fragment_account" />
 </navigation>

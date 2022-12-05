@@ -1,19 +1,18 @@
 package cn.neday.android.app.fragment.main
 
 import android.annotation.SuppressLint
-import androidx.fragment.app.Fragment
 import cn.neday.android.app.databinding.FragmentProjectBinding
-import cn.neday.android.app.viewmodel.HomeViewModel
+import cn.neday.android.app.viewmodel.ProjectViewModel
 import cn.neday.base.fragment.BaseBindingVMFragment
 import cn.neday.base.fragment.launchAndRepeatWithViewLifecycle
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * ProjectFragment
  */
-class ProjectFragment : BaseBindingVMFragment<FragmentProjectBinding, HomeViewModel>() {
+class ProjectFragment : BaseBindingVMFragment<FragmentProjectBinding, ProjectViewModel>() {
 
-    override val viewModel by viewModel<HomeViewModel>()
+    override val viewModel by viewModel<ProjectViewModel>()
 
     @SuppressLint("SetTextI18n")
     override fun initView() {

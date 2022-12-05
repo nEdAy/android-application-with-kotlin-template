@@ -1,0 +1,5 @@
+<resources>
+    <string name="tx_register">注册</string>
+    <string name="tx_login">登录</string>
+    <string name="tx_logout">注销</string>
+</resources>

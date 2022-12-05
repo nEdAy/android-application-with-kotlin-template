@@ -15,5 +15,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidTemplate"
 include ':app', ':base'
-include ':auth'
 include ':business'
+include ':business-auth'

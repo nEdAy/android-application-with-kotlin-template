@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tx_register">Register</string>
+    <string name="tx_login">Login</string>
+    <string name="tx_logout">Logout</string>
+</resources>

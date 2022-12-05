@@ -1,13 +1,6 @@
 <resources>
     <string name="app_name">WanAndroid</string>
 
-    <!-- Strings used for fragments for navigation -->
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>>
-
     <string name="bottom_nav_home">Index</string>
     <string name="bottom_nav_tree">System</string>
     <string name="bottom_nav_project">Project</string>

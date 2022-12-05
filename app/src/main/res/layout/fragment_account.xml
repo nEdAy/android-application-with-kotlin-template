@@ -6,73 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".fragment.main.AccountFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="6dp"
-        app:cardMaxElevation="10dp"
-        app:contentPaddingBottom="15dp"
-        app:contentPaddingLeft="20dp"
-        app:contentPaddingRight="20dp"
-        app:contentPaddingTop="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="『"
-                android:textColor="@color/black"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:id="@+id/tv_hitokoto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="30dp"
-                android:textColor="@color/black"
-                tools:text="这是一个测试文本" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:text="』"
-                android:textColor="@color/black"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:id="@+id/tv_from"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"
-                tools:text="—— 「${it.from}」" />
-
-            <TextView
-                android:id="@+id/likeInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                tools:text="2" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -81,7 +14,7 @@
         android:layout_marginBottom="@dimen/fab_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_dialog_email"
+        app:srcCompat="@android:drawable/ic_input_add"
         tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
