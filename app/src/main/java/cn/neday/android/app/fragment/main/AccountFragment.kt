@@ -2,6 +2,7 @@ package cn.neday.android.app.fragment.main
 
 import cn.neday.android.app.databinding.FragmentAccountBinding
 import cn.neday.android.app.viewmodel.AccountViewModel
+import cn.neday.android.business.router.BusinessAuthPathIndex
 import cn.neday.base.fragment.BaseBindingVMFragment
 import com.therouter.TheRouter
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -15,7 +16,7 @@ class AccountFragment : BaseBindingVMFragment<FragmentAccountBinding, AccountVie
 
     override fun initView() {
         binding.fab.setOnClickListener {
-            TheRouter.build("/auth").navigation()
+            TheRouter.build(BusinessAuthPathIndex.AuthActivity).navigation()
         }
     }
 }

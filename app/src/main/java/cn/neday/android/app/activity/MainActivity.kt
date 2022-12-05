@@ -7,7 +7,6 @@ import cn.neday.android.app.R
 import cn.neday.android.app.databinding.ActivityMainBinding
 import cn.neday.base.activity.BaseBindingActivity
 
-
 class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
