@@ -97,6 +97,9 @@ dependencies {
     // TheRouter
     api("cn.therouter:router:$therouter_version")
 
+    // AutoSize
+    api 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+
     def room_version = "2.5.0-beta02"
     api("androidx.room:room-runtime:$room_version")
     // To use Kotlin annotation processing tool (kapt)
