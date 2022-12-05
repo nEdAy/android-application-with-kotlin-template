@@ -5,7 +5,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import cn.neday.android.app.R
 import cn.neday.android.app.databinding.ActivityMainBinding
-import cn.neday.base.activity.BaseBindingActivity
+import cn.neday.android.base.activity.BaseBindingActivity
 
 class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
 

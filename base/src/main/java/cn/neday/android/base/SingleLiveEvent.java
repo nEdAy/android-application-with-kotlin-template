@@ -1,4 +1,4 @@
-package cn.neday.base;
+package cn.neday.android.base;
 
 import android.util.Log;
 

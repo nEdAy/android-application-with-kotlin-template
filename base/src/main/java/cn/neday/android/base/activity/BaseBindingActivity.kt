@@ -1,4 +1,4 @@
-package cn.neday.base.activity
+package cn.neday.android.base.activity
 
 import android.os.Build
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package cn.neday.base.network
+package cn.neday.android.base.network
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

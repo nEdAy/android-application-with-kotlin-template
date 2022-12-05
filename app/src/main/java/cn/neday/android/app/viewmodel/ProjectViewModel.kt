@@ -4,10 +4,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import cn.neday.android.app.network.repository.HitokotoRepository
 import cn.neday.android.app.network.response.LikeSet
-import cn.neday.base.SingleLiveEvent
-import cn.neday.base.network.requestAsync
-import cn.neday.base.network.then
-import cn.neday.base.viewmodel.BaseViewModel
+import cn.neday.android.base.SingleLiveEvent
+import cn.neday.android.base.network.requestAsync
+import cn.neday.android.base.network.then
+import cn.neday.android.base.viewmodel.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 

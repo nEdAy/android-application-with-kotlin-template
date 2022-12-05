@@ -1,4 +1,4 @@
-package cn.neday.base;
+package cn.neday.android.base;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("cn.neday.base.test", appContext.getPackageName());
+        assertEquals("cn.neday.android.base.test", appContext.getPackageName());
     }
 }

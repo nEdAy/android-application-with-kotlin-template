@@ -3,8 +3,8 @@ package cn.neday.android.app.fragment.main
 import android.annotation.SuppressLint
 import cn.neday.android.app.databinding.FragmentHomeBinding
 import cn.neday.android.app.viewmodel.HomeViewModel
-import cn.neday.base.fragment.BaseBindingVMFragment
-import cn.neday.base.fragment.launchAndRepeatWithViewLifecycle
+import cn.neday.android.base.fragment.BaseBindingVMFragment
+import cn.neday.android.base.fragment.launchAndRepeatWithViewLifecycle
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

@@ -1,4 +1,4 @@
-package cn.neday.base.fragment
+package cn.neday.android.base.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

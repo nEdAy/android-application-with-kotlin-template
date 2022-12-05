@@ -1,4 +1,4 @@
-package cn.neday.base.network.interceptor
+package cn.neday.android.base.network.interceptor
 
 import androidx.annotation.IntRange
 import okhttp3.Interceptor

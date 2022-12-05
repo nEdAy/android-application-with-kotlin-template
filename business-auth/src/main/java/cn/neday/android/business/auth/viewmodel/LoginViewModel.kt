@@ -1,7 +1,7 @@
 package cn.neday.android.business.auth.viewmodel
 
+import cn.neday.android.base.viewmodel.BaseViewModel
 import cn.neday.android.business.auth.network.repository.AuthRepository
-import cn.neday.base.viewmodel.BaseViewModel
 
 /**
  * LoginViewModel

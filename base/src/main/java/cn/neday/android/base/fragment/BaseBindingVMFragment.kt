@@ -1,7 +1,7 @@
-package cn.neday.base.fragment
+package cn.neday.android.base.fragment
 
 import androidx.viewbinding.ViewBinding
-import cn.neday.base.viewmodel.BaseViewModel
+import cn.neday.android.base.viewmodel.BaseViewModel
 import com.dylanc.longan.logError
 
 /**

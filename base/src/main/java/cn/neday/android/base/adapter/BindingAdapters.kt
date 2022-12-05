@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.neday.base.adapter
+package cn.neday.android.base.adapter
 
 import android.view.View
 import androidx.databinding.BindingAdapter
