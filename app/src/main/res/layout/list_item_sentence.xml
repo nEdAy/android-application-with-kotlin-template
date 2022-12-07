@@ -37,7 +37,6 @@
             android:layout_marginTop="5dp"
             android:padding="5dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
             android:textSize="20sp"
             tools:text="标题" />
     </LinearLayout>
