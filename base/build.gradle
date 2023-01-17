@@ -46,8 +46,8 @@ dependencies {
 
     // AndroidX UI
     api 'androidx.core:core-ktx:1.9.0'
-    api 'androidx.fragment:fragment-ktx:1.5.4'
-    api 'androidx.appcompat:appcompat:1.5.1'
+    api 'androidx.fragment:fragment-ktx:1.5.5'
+    api 'androidx.appcompat:appcompat:1.6.0'
 
     api 'androidx.constraintlayout:constraintlayout:2.1.4'
     api 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
@@ -64,10 +64,10 @@ dependencies {
     // APIs for SplashScreen
     api "androidx.core:core-splashscreen:1.0.0"
 
-    api 'androidx.startup:startup-runtime:1.2.0-alpha01'
+    api 'androidx.startup:startup-runtime:1.2.0-alpha02'
 
     // View Binding
-    api 'androidx.databinding:viewbinding:7.3.1'
+    api 'androidx.databinding:viewbinding:7.4.0'
     api 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-base:2.1.0'
 
     // Navigation
@@ -80,7 +80,7 @@ dependencies {
     // Material UI
     api 'com.google.android.material:material:1.7.0'
 
-    def lifecycle_version = "2.6.0-alpha03"
+    def lifecycle_version = "2.6.0-alpha04"
     // ViewModel
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     // ViewModel utilities for Compose
@@ -95,12 +95,13 @@ dependencies {
     api "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
 
     // TheRouter
-    api("cn.therouter:router:$therouter_version")
+    kapt "cn.therouter:apt:$therouter_version"
+    api "cn.therouter:router:$therouter_version"
 
     // AutoSize
     api 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
 
-    def room_version = "2.5.0-beta02"
+    def room_version = "2.5.0"
     api("androidx.room:room-runtime:$room_version")
     // To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:$room_version")
@@ -124,7 +125,7 @@ dependencies {
 
     // MMKV TODO:vs
     api 'com.github.DylanCaiCoding:MMKV-KTX:1.2.13'
-    api 'com.github.liangjingkanji:Serialize:1.3.2'
+    api 'com.github.liangjingkanji:Serialize:2.0.0'
 
     // Coil
     api 'io.coil-kt:coil:2.2.2'
@@ -147,6 +148,6 @@ dependencies {
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
